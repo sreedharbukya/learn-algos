@@ -17,7 +17,7 @@ This is the problem, which appeared in my three interviews in last one year.
 """
 
 
-def find_unique_pair(input_list, desired_sum):
+def find_unique_pair_whose_sum(input_list, sum):
     if len(input_list) < 0:
         return
 
@@ -28,13 +28,14 @@ def find_unique_pair(input_list, desired_sum):
     input_list.sort()
     for index, value in enumerate(input_list):
         for index2, value2 in enumerate(input_list[index + 1:]):
-            if (value + value2) == desired_sum:
+            if (value + value2) == sum:
                 all_pairs.append([value, value2])
 
     print(all_pairs)
+    print(len(all_pairs))
 
 
 if __name__ == "__main__":
     input_list = [1, 3, 4, 2, 5, 6, 5, 8]
     desired_sum = 10
-    pairs = find_unique_pair(input_list, desired_sum)
+    pairs = find_unique_pair_whose_sum(input_list, desired_sum)
