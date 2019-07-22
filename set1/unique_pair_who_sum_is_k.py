@@ -16,6 +16,8 @@ This is the problem, which appeared in my three interviews in last one year.
 
 """
 
+import itertools
+
 
 def find_unique_pair_whose_sum(input_list, sum):
     if len(input_list) < 0:
@@ -31,4 +33,5 @@ def find_unique_pair_whose_sum(input_list, sum):
             if (value + value2) == sum:
                 unique_pairs.append([value, value2])
 
-    return unique_pairs, len(unique_pairs)
+    result = list(unique_pairs for unique_pairs, _ in itertools.groupby(unique_pairs))
+    return result, len(result)
