@@ -25,8 +25,7 @@ class Graph:
             print("Adjacency List of vertex {}".format(i), end="")
 
             temp = self.graph[i]
-
-            while (temp):
+            while temp:
                 print(" -> {}".format(temp.vertex), end="")
                 temp = temp.next
             print("\n")
